@@ -1,0 +1,5 @@
+{
+     "netid": "sof1",
+  "frontend": "http://numberless-father.surge.sh",
+   "backend": "https://sof19backend.herokuapp.com",
+}
