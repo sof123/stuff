@@ -38,6 +38,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.5.0",
     "bluebird": "^3.3.5",
+    "body-parser": "^1.18.2",
     "bootstrap": "^3.3.7",
     "bootstrap-webpack": "0.0.5",
     "chai": "^3.5.0",
@@ -80,6 +81,7 @@
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.1.0",
+    "request": "^2.85.0",
     "rimraf": "^2.5.4",
     "selenium-webdriver": "^2.53.2",
     "serve": "^1.4.0",
@@ -91,12 +93,10 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "body-parser": "^1.17.1",
-    "express-sessions": "^1.0.6",
-    "express": "^4.15.2",
+    "express": "^4.16.3",
     "express-session": "^1.15.2",
+    "express-sessions": "^1.0.6",
     "md5": "^2.2.1",
-    "request": "^2.81.0",
     "redis": "^2.7.1"
   }
 }

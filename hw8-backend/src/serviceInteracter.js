@@ -1,9 +1,6 @@
 var currentId = 3
 var index = require('./index')
 
-const Article = require('./model').Article
-const Profile = require('./model').Profile
-
 const articles = [{ id: currentId, author: "author", text: "text", date: new Date(), comments: [ ]},
                  { id: currentId+1, author: "author2", text: "text2", date: new Date(), comments: [ ]},
                  { id: currentId+2, author: "author3", text: "text3", date: new Date(), comments: [ ]}]
@@ -50,6 +47,42 @@ const getArticles = (req, res) => {
     ))})
 
   })
+}
+
+const hello = (req, res) => {
+  console.log('in default')
+  res.json({result: "Hello Tolunay"})
+}
+
+const getAccountBalance = (req, res) => {
+  console.log('in getAccountBalance')
+  res.json({result: {
+    accountBalance: 0
+  }})
+}
+
+const makePaymentGet = (req, res) => {
+  console.log('in makePayment')
+  res.json({result: "Payment made"})
+}
+
+const makePaymentPost = (req, res) => {
+  console.log('in makePayment')
+  res.json({result: "Payment made"})
+}
+
+const getConsumptionInfo = (req, res) => {
+  console.log('in getConsumptionInfot')
+  res.json({result: {
+    consumptionInfo: []
+  }})
+}
+
+const getPaymentHistory = (req, res) => {
+  console.log('in getPaymentHistory')
+  res.json({result: {
+    paymentHistory: []
+  }})
 }
 
 function getFeedArticlesForUser(username) {
@@ -258,6 +291,12 @@ const editArticles = (req, res) => {
 
 
 module.exports = app => {
+     app.get('/', hello)
+     app.get('/accountBalance', getAccountBalance)
+     app.get('/paymentHistory', getPaymentHistory)
+     app.get('/consumptionInfo', getConsumptionInfo)
+     app.get('/makePayment', makePaymentGet)
+     app.post('/makePayment', makePaymentPost)
      app.post('/article', addArticle)
      app.put('/articles/:id', editArticles)
      //app.get('/articles', getArticles)

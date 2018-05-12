@@ -1,16 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-var mongoose = require('mongoose')
 const request = require('request')
 const qs = require('qs')
-const session = require('express-session');
-module.exports.globalUsername = undefined
-if (process.env.NODE_ENV !== "production") {
-    require('dotenv').load()
-}
-
-mongoose.connect("mongodb://sof1:pray8888@ds157667.mlab.com:57667/sof1db");
-
 const app = express()
 app.use(bodyParser.json())
 
@@ -34,9 +25,7 @@ app.use(function (req, res, next) {
     next();//
 });
 
-require('./profile')(app)
-require('./articles')(app)
-require('./auth')(app)
+require('./serviceInteracter')(app)
 
 app.use('/auth', login)
 app.use('/callback', authCallback)
